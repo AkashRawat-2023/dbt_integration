@@ -1,0 +1,10 @@
+version: 2
+ 
+sources:
+  - name: AKASH
+    schema: RAW
+    tables:
+      - name: LEARNING
+        identifier: LEARNING_N
+      - name: ACTIVE_EMPLOYEES
+        identifier: ACTIVE_EMPLOYEES
