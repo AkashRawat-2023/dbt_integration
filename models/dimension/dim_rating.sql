@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        unique_key = ['performance_rating', 'potential_rating']
     )
 }}
 WITH rating AS (

@@ -8,3 +8,5 @@ sources:
         identifier: LEARNING_N
       - name: ACTIVE_EMPLOYEES
         identifier: ACTIVE_EMPLOYEES
+      - name: LEARNING_INCREMENTAL
+        identifier: LEARNING_INCREMENTAL

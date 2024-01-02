@@ -1,6 +1,8 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        unique_key = ['ASSIGNMENT_NAME','ASSIGNMENT_EMPLOYMENT_CATEGORY','ASSIGNMENT_CURRENT_CHG_ACTION',
+'ASSIGNMENT_CURRENT_CHG_REASON','ASSIGNMENT_STATUS','HOURLY_SALARIED','GRADE_NAME','Assignment_Current_Effective_Date']
     )
 }}
 

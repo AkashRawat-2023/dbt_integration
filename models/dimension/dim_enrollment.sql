@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        unique_key = ['ATTAINED_CERTIFICATE', 'ENROLLMENT_METHOD','IS_ENROLLED','is_deleted','is_active']
     )
 }}
 WITH enroll AS (

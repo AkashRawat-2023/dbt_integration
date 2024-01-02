@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        unique_key = ['business_unit_name','legal_entity_name']
     )
 }}
 WITH business AS (

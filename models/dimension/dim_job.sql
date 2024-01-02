@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        unique_key = ['JOB_TITLE', 'JOB_FUNCTION','JOB_FAMILY','EEO_CATEGORY','CAREER_BAND','CAREER_LEVEL']
     )
 }}
 

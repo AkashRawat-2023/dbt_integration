@@ -1,13 +1,19 @@
 {{
     config(
-        materialized = 'view'
+        materialized = 'table'
     )
 }}
-WITH A AS (
+
+WITH max_received_At AS (
+    SELECT max(RECEIVED_AT) AS max_received
+    FROM {{ref('learning_combined')}}
+),
+A AS (
     SELECT * FROM {{ref("src_active_employees_cleansed")}}
 ),
 L AS(
-    SELECT * FROM {{ref("src_learning_cleansed")}}
+    SELECT * FROM {{ref("learning_combined")}}
+    WHERE RECEIVED_AT = (SELECT max_received FROM max_received_At)
 )
 
 SELECT

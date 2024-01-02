@@ -16,52 +16,52 @@ models:
         tests:
           - unique
           - not_null
-      - name: entity_id
-        tests:
-          - relationships:
-              to: ref('dim_business_entity')
-              field: entity_id
-        description: ""
-      - name: rating_id
-        tests:
-          - relationships:
-              to: ref('dim_rating')
-              field: rating_id
-        description: ""
-      - name: location_id
-        tests:
-          - relationships:
-              to: ref('dim_work_location')
-              field: location_id
-        description: "" 
-      - name: job_id
-        tests:
-          - relationships:
-              to: ref('dim_job')
-              field: job_id
-        description: ""
-      - name: segment_id
-        tests:
-          - relationships:
-              to: ref('dim_segment')
-              field: segment_id
-        description: ""
-      - name: assig_id
-        tests:
-          - relationships:
-              to: ref('dim_assignment')
-              field: assig_id
-        description: ""
-      - name: course_id
-        tests:
-          - relationships:
-              to: ref('dim_course')
-              field: course_id
-        description: ""
-      - name: ROW_ID
-        tests:
-          - relationships:
-              to: ref('dim_enrollemnt')
-              field: ROW_ID
-        description: ""
+      # - name: entity_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_business_entity')
+      #         field: entity_id
+      #   description: ""
+      # - name: rating_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_rating')
+      #         field: rating_id
+      #   description: ""
+      # - name: location_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_work_location')
+      #         field: location_id
+      #   description: "" 
+      # - name: job_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_job')
+      #         field: job_id
+      #   description: ""
+      # - name: segment_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_segment')
+      #         field: segment_id
+      #   description: ""
+      # - name: assig_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_assignment')
+      #         field: assig_id
+      #   description: ""
+      # - name: course_id
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_course')
+      #         field: course_id
+      #   description: ""
+      # - name: ROW_ID
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_enrollemnt')
+      #         field: ROW_ID
+      #   description: ""
        

@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'table'
+        materialized='incremental',
+        unique_key=['COURSE', 'COURSE_NAME', 'COURSE_TYPE', 'COURSE_VERSION', 'LANGUAGE', 'VENDOR']
     )
 }}
 

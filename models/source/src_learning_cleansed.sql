@@ -1,6 +1,6 @@
 
 WITH src_learning AS(
-    SELECT * FROM {{source('AKASH','LEARNING')}}
+    SELECT * FROM {{source('AKASH','LEARNING_INCREMENTAL')}}
 )
 SELECT
 ENROLLMENT_ID,
@@ -16,7 +16,6 @@ DATE_ENROLLED,
 DATE_EXPIRES,
 DATE_HIRED,
 DATE_STARTED,
-DAYS_UNTIL_DUE,
 EMPLOYEE_NUMBER,
 NVL(ENROLLMENT_METHOD,'NA') AS ENROLLMENT_METHOD,
 NVL(IS_ENROLLED,'NA') AS IS_ENROLLED,
@@ -38,7 +37,15 @@ CASE
 TIMESPENT_MIN,
 NVL(VENDOR, 'NA') AS
 VENDOR,
-NVL(is_deleted,'NA') as is_deleted,
-NVL(is_active,'NA') as is_active
+CASE
+    WHEN is_deleted = 'TRUE' THEN 'True'
+    WHEN is_deleted = 'FALSE' THEN 'False'
+    WHEN is_deleted = NULL THEN 'NA'
+    ELSE is_deleted
+  END AS is_deleted,
+NVL(is_active,'NA') as is_active,
+CURRENT_TIMESTAMP()AS RECEIVED_AT
 FROM src_learning
- 
+
+
+-- DAYS_UNTIL_DUE,

@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        unique_key = ['department_name', 'sub_opco','opco','segment']
     )
 }}
 
