@@ -1,4 +1,5 @@
 
+
 WITH active_employees AS (
   SELECT * 
  FROM {{source('AKASH','ACTIVE_EMPLOYEES')}}
