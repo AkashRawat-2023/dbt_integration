@@ -1,6 +1,6 @@
 {{ config(
     materialized='ephemeral',
-    full_refresh=false
+    full_refresh = false
 ) }}
 
 WITH src_learning AS(
@@ -24,7 +24,6 @@ EMPLOYEE_NUMBER,
 NVL(ENROLLMENT_METHOD,'NA') AS ENROLLMENT_METHOD,
 NVL(IS_ENROLLED,'NA') AS IS_ENROLLED,
 LANGUAGE,
-LAST_LOGGEDIN AS LAST_LOGGED_IN,
 PROGRESS,
 SCORE,
 CASE

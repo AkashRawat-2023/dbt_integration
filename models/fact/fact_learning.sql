@@ -1,7 +1,7 @@
 {{config(
     materialized = 'incremental',
-    unique_key = 'enrollment_id',
-    merge_exclude_columns = ['inserted_at'],
+        unique_key = 'enrollment_id',
+        merge_exclude_columns = ['inserted_at'],
 
     )
 }}
@@ -38,7 +38,6 @@ FROM {{ref('src_active_join_learning')}}
  NVL(TO_NUMBER(TO_CHAR(f.DATE_EDITED, 'YYYYMMDD')),-999) AS DATE_EDITED_KEY,
  NVL(TO_NUMBER(TO_CHAR(f.DATE_ENROLLED, 'YYYYMMDD')),-999) AS DATE_ENROLLED_KEY,
  NVL(TO_NUMBER(TO_CHAR(f.DATE_EXPIRES, 'YYYYMMDD')),-999) AS  DATE_EXPIRES_KEY,
- NVL(TO_NUMBER(TO_CHAR(f.LAST_LOGGED_IN, 'YYYYMMDD')),-999) AS LAST_LOGGED_IN_KEY,
  NVL(TO_NUMBER(TO_CHAR(f.Original_Hire_Date, 'YYYYMMDD')),-999) AS Original_Hire_Date_KEY,
  NVL(TO_NUMBER(TO_CHAR(f.Latest_Hire_Date, 'YYYYMMDD')),-999) AS Latest_Hire_Date_KEY,
  NVL(TO_NUMBER(TO_CHAR(f.Adjusted_Service_Date, 'YYYYMMDD')),-999) AS Adjusted_Service_Date_KEY
